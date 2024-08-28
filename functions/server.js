@@ -11,7 +11,7 @@ require('../_seeder');
 
 app.use(bodyParser.json())
 // app.use(cors("http://localhost:3001"));
-app.use(cors("https://registerUserServer.netlify.app"));
+app.use(cors("https://userroles.netlify.app"));
 
 
 
