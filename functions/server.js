@@ -10,8 +10,13 @@ require('../_seeder');
 
 
 app.use(bodyParser.json())
+<<<<<<< HEAD
 app.use(cors("http://localhost:3001"));
 // app.use(cors("https://userroles.netlify.app/"));
+=======
+// app.use(cors("http://localhost:3001"));
+app.use(cors("https://userroles.netlify.app"));
+>>>>>>> 049b59af67c42342a975308188c85eb04baae824
 
 
 
