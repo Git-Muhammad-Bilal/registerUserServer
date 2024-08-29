@@ -99,10 +99,18 @@ exports.getUser = async (req, res) => {
 
 
 exports.createUser = async (req, res) => {
-    const { name, email, role, password } = req.body
-
+    const { name, email, role, password, _id } = req.body
+     
     try {
-        await Users.create({ name, email, role, password })
+        let foundUser = await Users.findOne({_id:_id})
+        if (foundUser) {
+            let user = await Users.updateOne({_id:_id},{$set:{ name, email, role, password }})
+            res.send(user)
+            
+        } else{
+            let user = await Users.create({ name, email, role, password} )
+            res.send(user)
+        }
     } catch (error) {
         console.log(error.message);
     }
